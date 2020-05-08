@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/claytonjones-401n16/lab-16/issues"
   },
-  "homepage": "https://github.com/claytonjones-401n16/lab-16#readme"
+  "homepage": "https://github.com/claytonjones-401n16/lab-16#readme",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "jest": "^26.0.1"
+  }
 }
