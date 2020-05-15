@@ -2,7 +2,7 @@
   "name": "vendor",
   "version": "1.0.0",
   "description": "",
-  "main": "verndor.js",
+  "main": "vendor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node vendor.js"

@@ -23,6 +23,8 @@
   "homepage": "https://github.com/claytonjones-401n16/lab-16#readme",
   "dependencies": {
     "faker": "^4.1.0",
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
   }
 }

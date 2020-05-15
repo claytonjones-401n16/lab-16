@@ -1,24 +1,11 @@
 'use strict';
 
-const net = require('net');
-const socket = net.Socket();
+const socket = require('socket.io-client').connect('http://localhost:3000/csps');
+
 const faker = require('faker');
 
-socket.connect({port: 3000, host: 'localhost'}, () => {
-  console.log('Connected to TCP server!');
-});
-
-socket.on('data', (payload) => {
-  // console.log('received:', JSON.parse(Buffer.from(payload).toString()));
-  payload = JSON.parse(Buffer.from(payload).toString());
-  let event = payload.event;
-  let order = payload.order;
-
-  // let {event, order} = payload;
-
-  if (event === 'delivered') {
-    console.log(`Thanks for delivering order # ${order.id}`);
-  }
+socket.on('delivered', (payload) => {
+  console.log(`Thanks for delivering order ${payload.id}`);
 });
 
 setInterval(() => {
@@ -30,5 +17,7 @@ setInterval(() => {
     customer: faker.name.findName(),
     address: `${faker.address.streetAddress()}, ${faker.address.city()}, ${faker.address.stateAbbr()}, ${faker.address.zipCode()}`
   };
-  socket.write(JSON.stringify({event: 'pickup', order: payload}));
+
+  socket.emit('join', payload.store);
+  socket.emit('pickup', payload);
 }, 5000);
