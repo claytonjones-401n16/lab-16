@@ -24,4 +24,4 @@ No tests available
 
 #### UML  
 
-![lab 17 UML](./assets/lab-17.png)
+![lab 18 UML](./assets/lab-17.png)
